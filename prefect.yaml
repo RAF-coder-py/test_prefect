@@ -2,25 +2,25 @@
 ### A complete description of a Prefect Deployment for flow 'Game'
 ###
 name: Game_deployment
-description: null
+description:
 version: 4d21c571f676fae003164c52f17aee07
 # The work queue that will handle this deployment's runs
 work_queue_name: default
-work_pool_name: null
+work_pool_name:
 tags: []
 parameters: {}
-schedule: null 
+schedule:
 schedules: []
-is_schedule_active: null
+is_schedule_active:
 infra_overrides: {}
 infrastructure:
   type: process
   env: {}
   labels: {}
-  name: null
-  command: null
+  name:
+  command:
   stream_output: true
-  working_dir: null
+  working_dir:
   block_type_slug: process
   _block_type_slug: process
 
@@ -28,16 +28,36 @@ infrastructure:
 ### DO NOT EDIT BELOW THIS LINE
 ###
 flow_name: Game
-manifest_path: null
-storage: null
+manifest_path:
+storage:
 path: /Users/ralphhonhon/Desktop/vscode/TESTS/test_prefect_2
 entrypoint: main.py:Game
 parameter_openapi_schema:
   title: Parameters
   type: object
   properties: {}
-  required: null
-  definitions: null
+  required:
+  definitions:
 timestamp: '2024-08-29T11:11:54.414033+00:00'
 triggers: []
-enforce_parameter_schema: null
+enforce_parameter_schema:
+deployments:
+- name: Game-deployment
+  version:
+  tags: []
+  description:
+  entrypoint: main.py:Game
+  parameters: {}
+  work_pool:
+    name: 1st_work_pool
+    work_queue_name:
+    job_variables: {}
+  schedules:
+  - interval: 60.0
+    anchor_date: '2024-08-29T16:01:33.589434+00:00'
+    timezone: UTC
+    active: true
+  pull:
+  - prefect.deployments.steps.git_clone:
+      repository: https://github.com/RAF-coder-py/test_prefect_2.git
+      branch: main
