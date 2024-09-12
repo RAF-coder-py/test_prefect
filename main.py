@@ -3,5 +3,4 @@ import os
 
 @flow(log_prints=True)
 def main():
-    os.system("cd ..")
-    os.system("pwd")
+    os.system("python3 Jeu/main.py")
