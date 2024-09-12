@@ -1,12 +1,8 @@
 from prefect import flow
-# from rich import print
-# import os
+import os
+import sys
 
 @flow(log_prints=True)
 def main():
-    from rich import print
-    # os.system('python3 Jeu/main.py')
-    print("[green]Le jeu est lancé[/green]")
-
-
-
+    # os.system()
+    sys.exit(1)

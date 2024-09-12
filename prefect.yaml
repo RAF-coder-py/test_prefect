@@ -61,3 +61,22 @@ deployments:
   - prefect.deployments.steps.git_clone:
       repository: https://github.com/RAF-coder-py/test_prefect_2.git
       branch: main
+- name: Test
+  version:
+  tags: []
+  description:
+  entrypoint: main.py:main
+  parameters: {}
+  work_pool:
+    name: 'null'
+    work_queue_name:
+    job_variables: {}
+  schedules:
+  - interval: 30.0
+    anchor_date: '2024-09-12T09:11:52.881729+00:00'
+    timezone: UTC
+    active: true
+  pull:
+  - prefect.deployments.steps.git_clone:
+      repository: https://github.com/RAF-coder-py/test_prefect.git
+      branch: main
